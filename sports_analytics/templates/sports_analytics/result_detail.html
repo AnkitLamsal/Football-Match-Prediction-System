@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Details</title>
+</head>
+<body>
+    <h2>First Team : {{object.team1}}</h2>
+    <h3>Second Team: {{object.team2}}</h3>
+    <h5>Result : {{result}}</h5>
+    <h6>Mean: {{mean}}</h6>
+    <h6>Std: {{std}}</h6>
+
+    {% if graph %}
+        <img src="data:image/png;base64,{{ graph }}" alt="Graph" height="500" width="500">
+    {% endif %}
+</body>
+</html>
