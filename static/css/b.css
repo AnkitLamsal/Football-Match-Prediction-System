@@ -28,23 +28,40 @@ a{
 
 .row {
     text-align: center;
-    line-height: 40px;
-    height: 40px;
 }
 
 .firstColumn {
     min-width: 150px;
+}
+
+.table-2-title {
     white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
-
 }
 
+.page-title {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 300;
+}
+.score-title {
+    margin-top: 50px;
+}
 .col{
     flex: 1;
+    height: 40px;
+    line-height: 40px;
 }
 
+.table-1-col {
+    border:0.25px solid #ccc;
+    text-align: center;
+}
 .col-pad-0{
     padding-right: 1.7%;
 }
@@ -77,4 +94,61 @@ a{
     background-color: blueviolet;
     color:white;
     border:0.25px solid #ccc;
+}
+
+@media (max-width: 800px) {
+    .table-2 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .row {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-2-title {
+        text-align: center;
+        border: 0.25px solid #ccc;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .firstColumn {
+        min-width: unset;
+    }
+}
+
+.graph {
+    margin: 100px;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #e0e0e0;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.graphTitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.graphImage {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .graph {
+        margin: 20px;
+        border-radius: 20px;
+        box-shadow:  5px 5px 15px #bebebe, -5px -5px 15px #e0e0e0;
+        padding: 20px 6px;
+    }
+
+
+    .graphTitle {
+        font-size: 1.2rem;
+    }
 }

@@ -35,75 +35,78 @@
     </header>
     <main>
         <div class="container">
-            <h2>Simulation of Football Match</h2>
+            <h2 class="page-title">Simulation of Football Match</h2>
             <div class="mid">
                 <h3 class="text">Team Details and Statistics</h3>
             </div>
             <div class="table-1">
                 <div class="row-1">
-                    <div class="col">Team</div>
-                    <div class="col">{{object.team1.team_name}}</div>
-                    <div class="col">{{object.team2.team_name}}</div>
+                    <div class="col table-1-col">Team</div>
+                    <div class="col table-1-col">{{object.team1.team_name}}</div>
+                    <div class="col table-1-col">{{object.team2.team_name}}</div>
                 </div>
                 <div class="row-2">
-                    <div class="col">Posession</div>
-                    <div class="col">{{object.team1.team_posession}}</div>
-                    <div class="col">{{object.team2.team_posession}}</div>
+                    <div class="col table-1-col">Posession</div>
+                    <div class="col table-1-col">{{object.team1.team_posession}}</div>
+                    <div class="col table-1-col">{{object.team2.team_posession}}</div>
                 </div>
                 <div class="row-3">
-                    <div class="col">Hits</div>
-                    <div class="col">{{object.team1.team_hit}}</div>
-                    <div class="col">{{object.team2.team_hit}}</div>
+                    <div class="col table-1-col">Hits</div>
+                    <div class="col table-1-col">{{object.team1.team_hit}}</div>
+                    <div class="col table-1-col">{{object.team2.team_hit}}</div>
                 </div>
                 <div class="row-4">
-                    <div class="col">Mean</div>
-                    <div class="col">{{mean.0}}</div>
-                    <div class="col">{{mean.1}}</div>
+                    <div class="col table-1-col">Mean</div>
+                    <div class="col table-1-col">{{mean.0}}</div>
+                    <div class="col table-1-col">{{mean.1}}</div>
                 </div>
                 <div class="row-5">
-                    <div class="col">Standard Deviation</div>
-                    <div class="col">{{std.0}}</div>
-                    <div class="col">{{std.1}}</div>
+                    <div class="col table-1-col">Standard Deviation</div>
+                    <div class="col table-1-col">{{std.0}}</div>
+                    <div class="col table-1-col">{{std.1}}</div>
                 </div>
             </div>
         </div>
-        <h3>Simulated Score Details</h3>
-        <div class="itr-header row">
-            <div class="col col-pad-0 firstColumn">Runs</div>
-            {% for i in len %}
-            <div class="col itr">{{i}}</div>
-            {% endfor%}
+        <h3 class="score-title">Simulated Score Details</h3>
+        <div class="table-2">
+            <div class="itr-header row">
+                <div class="col col-pad-0 firstColumn"><div class="table-2-title">Runs</div></div>
+                {% for i in len %}
+                <div class="col itr">{{i}}</div>
+                {% endfor%}
+            </div>
+            <div class="team-1 row">
+                <div class="col col-pad-1 firstColumn"><div class="table-2-title">{{object.team1.team_name}}</div></div>
+                {% for i in result1%}
+                <div class="col game">{{i}}</div>
+                {% endfor%}
+            </div>
+            <div class="team-2 row">
+                <div class="col col-pad-2 firstColumn"><div class="table-2-title">{{object.team2.team_name}}</div></div>
+                {% for i in result2%}
+                <div class="col game">{{i}}</div>
+                {% endfor%}
+            </div>
+            <div class="win row">
+                <div class="col col-pad-3 firstColumn"><div class="table-2-title">Win Loss</div></div>
+                {% for a,i in win_loss %}
+                {% if i == "T1" %}
+                <div class="col t1">{{a}}</div>
+                {% endif %}
+                {% if i == "T2" %}
+                <div class="col t2">{{a}}</div>
+                {% endif %}
+                {% if i == "Dr"%}
+                <div class="col dr">{{i}}</div>
+                {%endif%}
+                {% endfor%}
+            </div>
         </div>
-        <div class="team-1 row">
-            <div class="col col-pad-1 firstColumn">{{object.team1.team_name}}</div>
-            {% for i in result1%}
-            <div class="col game">{{i}}</div>
-            {% endfor%}
-        </div>
-        <div class="team-2 row">
-            <div class="col col-pad-2 firstColumn">{{object.team2.team_name}}</div>
-            {% for i in result2%}
-            <div class="col game">{{i}}</div>
-            {% endfor%}
-        </div>
-        <div class="win row">
-            <div class="col col-pad-3 firstColumn">Win Loss</div>
-            {% for a,i in win_loss %}
-            {% if i == "T1" %}
-            <div class="col t1">{{a}}</div>
-            {% endif %}
-            {% if i == "T2" %}
-            <div class="col t2">{{a}}</div>
-            {% endif %}
-            {% if i == "Dr"%}
-            <div class="col dr">{{i}}</div>
-            {%endif%}
-            {% endfor%}
-        </div><br>
+        <br>
         <div class="graph">
-            <h3>Goal Score Scatter Plot</h3>
+            <div class="graphTitle">Goal Score Scatter Plot</div>
             {% if graph %}
-            <img src="data:image/png;base64,{{ graph }}" alt="Graph" height="500" width="500">
+            <img class="graphImage" src="data:image/png;base64,{{ graph }}" alt="Graph" height="500" width="500">
             {% endif %}
         </div>
     </main>
