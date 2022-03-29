@@ -1,70 +1,210 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 .table{
     display: flex;
 }
 .a_links{
     list-style-type: none;
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    background-color:black;
+    margin: 0;
 }
 .a_links>.links{
     flex:1;
-    /* padding-left: 1.5%; */
-    /* padding-right: 1.5%; */
     display: inline;
+    color: white;
+
 }
+
 a{
     text-decoration: none;
     color:black;
-    font-size: 1.5rem;
+
+    font-size: 1.2rem;
 }
 
 .itr-header,.team-1,.team-2,.win,.row-1,.row-2,.row-3, .row-4,.row-5{
     display:flex;
 }
-.col{
-    flex:1;
-    /* padding-top: 0.5%;
-    padding-bottom: 0.5%; */
-    padding: 0.25%;
+
+.navLink {
+    font-size: 1.6rem;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0 10px;
+    color: white;
+}
+.row {
+    text-align: center;
 }
 
-.col-pad-0{
-    padding-right: 1.7%;
+.actions {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
 }
-.col-pad-1, .col-pad-2{
-    padding-right: 1.75%;
+
+.action {
+    box-shadow:  5px 5px 15px #bebebe, -5px -5px 15px #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 5px;
 }
-.col-pad-3{
-    padding-right: 1.67%;
+
+@media (max-width: 1100px) {
+    .actions {
+        grid-template-columns: auto auto;
+        gap: 40px;
+    }
 }
+
+@media (max-width: 1100px) {
+    .actions {
+        grid-template-columns: auto;
+    }
+}
+
+
+.teamDetailsTitle {
+    margin-top: 50px;
+    padding: 0 20px;
+}
+.firstColumn {
+    min-width: 150px;
+}
+
+.table-2, .table-1 {
+    padding: 0 20px;
+}
+.table-2-title {
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.page-title {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 0 20px;
+}
+.score-title {
+    margin-top: 50px;
+    padding: 0 20px;
+}
+.col{
+    flex: 1;
+    height: 60px;
+    line-height: 60px;
+}
+
+.row-1 {
+    background-color: turquoise;
+}
+
+.table-1-col {
+    border:0.25px solid #ccc;
+    text-align: center;
+}
+
 .game{
-    color:red;
-    background-color: black;
-    border: 0.25px solid white;
+    border: 0.25px solid #ccc;
 }
 .itr{
     color:black;
-    background-color: aquamarine;
-    border:0.25px solid white;
+    border:0.25px solid #ccc;
 }
 .t1{
     background-color: yellowgreen;
     color:black;
-    border: 0.25px solid white;
+    border: 0.25px solid #ccc;
 
 }
 .t2{
     background-color: turquoise;
     color:black;
-    border: 0.25px solid white;
+    border: 0.25px solid #ccc;
 
 }
 .dr{
     background-color: blueviolet;
     color:white;
-    border:0.25px solid white;
+    border:0.25px solid #ccc;
+}
+
+@media (max-width: 800px) {
+    .table-2 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .row {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-2-title {
+        text-align: center;
+        border: 0.25px solid #ccc;
+        padding: 0 5px;
+    }
+    .firstColumn {
+        min-width: unset;
+    }
+}
+
+.graph {
+    margin: 100px auto;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow:  20px 20px 60px #eeeeee, -20px -20px 60px #eaeaea;
+    text-align: center;
+    padding: 30px 50px;
+    max-width: 600px;
+}
+
+.graphTitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.graphImage {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .graph {
+        margin: 20px;
+        border-radius: 20px;
+        box-shadow:  5px 5px 15px #bebebe, -5px -5px 15px #e0e0e0;
+        padding: 20px 6px;
+    }
+
+
+    .graphTitle {
+        font-size: 1.2rem;
+    }
 }
