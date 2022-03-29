@@ -1,39 +1,85 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .table{
     display: flex;
 }
 .a_links{
     list-style-type: none;
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    background-color:black;
+    margin: 0;
 }
 .a_links>.links{
     flex:1;
-    /* padding-left: 1.5%; */
-    /* padding-right: 1.5%; */
     display: inline;
+    color: white;
+
 }
+
 a{
     text-decoration: none;
     color:black;
-    font-size: 1.5rem;
+
+    font-size: 1.2rem;
 }
 
 .itr-header,.team-1,.team-2,.win,.row-1,.row-2,.row-3, .row-4,.row-5{
     display:flex;
 }
 
+.navLink {
+    font-size: 1.6rem;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0 10px;
+    color: white;
+}
 .row {
     text-align: center;
 }
 
+.actions {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+}
+
+.action {
+    box-shadow:  5px 5px 15px #bebebe, -5px -5px 15px #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 1100px) {
+    .actions {
+        grid-template-columns: auto auto;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .actions {
+        grid-template-columns: auto;
+    }
+}
+
+
+.teamDetailsTitle {
+    margin-top: 50px;
+    padding: 0 20px;
+}
 .firstColumn {
     min-width: 150px;
 }
 
+.table-2, .table-1 {
+    padding: 0 20px;
+}
 .table-2-title {
     white-space: nowrap;
     word-break: break-all;
@@ -41,6 +87,7 @@ a{
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
+    padding: 0 20px;
 }
 
 .page-title {
@@ -48,14 +95,20 @@ a{
     text-align: center;
     font-size: 3rem;
     font-weight: 300;
+    padding: 0 20px;
 }
 .score-title {
     margin-top: 50px;
+    padding: 0 20px;
 }
 .col{
     flex: 1;
-    height: 40px;
-    line-height: 40px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.row-1 {
+    background-color: turquoise;
 }
 
 .table-1-col {
@@ -121,12 +174,13 @@ a{
 }
 
 .graph {
-    margin: 100px;
-    border-radius: 50px;
+    margin: 100px auto;
+    border-radius: 20px;
     background: #fff;
-    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #e0e0e0;
+    box-shadow:  20px 20px 60px #eeeeee, -20px -20px 60px #eaeaea;
     text-align: center;
-    padding: 30px 20px;
+    padding: 30px 50px;
+    max-width: 600px;
 }
 
 .graphTitle {
