@@ -16,10 +16,10 @@ def monte_carlo_run(team1, team2):
         rand = np.random.random()
         chance = np.random.random()
         # chance to switch posession
-        if chance < .5:
+        if chance < 0.5:
             if rand < team1.posession:
                 posession_team = 0
-        else: 
+        elif chance>0.5: 
             if rand < team2.posession:
                 posession_team = 1
         # chance to hit goal:

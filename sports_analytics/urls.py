@@ -1,5 +1,5 @@
 from django.urls import path, reverse_lazy
-from .views import ResultCreate, TeamCreate, TeamView, home, ResultDetailView
+from .views import ResultCreate, TeamCreate, TeamView, home, ResultDetailView, TeamUpdate
 app_name = "sports_analytics"
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('results-team/',ResultCreate.as_view(),name='simulate'),
     # path('home/<int:pk>/', home_, name='test'),
     path('simulation-details/<int:pk>/',ResultDetailView.as_view(), name="result_detail"),
+    path('update-team/<int:pk>/', TeamUpdate.as_view(), name="update_team"),
 ]

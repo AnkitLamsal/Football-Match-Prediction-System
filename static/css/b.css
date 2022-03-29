@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.table{
+    display: flex;
+}
+.a_links{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.a_links>.links{
+    flex:1;
+    /* padding-left: 1.5%; */
+    /* padding-right: 1.5%; */
+    display: inline;
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.5rem;
+}
+
+.itr-header,.team-1,.team-2,.win,.row-1,.row-2,.row-3, .row-4,.row-5{
+    display:flex;
+}
+.col{
+    flex:1;
+    /* padding-top: 0.5%;
+    padding-bottom: 0.5%; */
+    padding: 0.25%;
+}
+
+.col-pad-0{
+    padding-right: 1.7%;
+}
+.col-pad-1, .col-pad-2{
+    padding-right: 1.75%;
+}
+.col-pad-3{
+    padding-right: 1.67%;
+}
+.game{
+    color:red;
+    background-color: black;
+    border: 0.25px solid white;
+}
+.itr{
+    color:black;
+    background-color: aquamarine;
+    border:0.25px solid white;
+}
+.t1{
+    background-color: yellowgreen;
+    color:black;
+    border: 0.25px solid white;
+
+}
+.t2{
+    background-color: turquoise;
+    color:black;
+    border: 0.25px solid white;
+
+}
+.dr{
+    background-color: blueviolet;
+    color:white;
+    border:0.25px solid white;
+}

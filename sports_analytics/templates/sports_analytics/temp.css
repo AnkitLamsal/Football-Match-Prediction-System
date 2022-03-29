@@ -1,0 +1,24 @@
+.a_links{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.a_links>.links{
+    flex:1;
+    /* padding-left: 1.5%; */
+    /* padding-right: 1.5%; */
+    display: inline;
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.5rem;
+}
+
+.itr-header,.team-1,.team-2{
+    display: flex;
+}
+.col{
+    flex:1;
+}
