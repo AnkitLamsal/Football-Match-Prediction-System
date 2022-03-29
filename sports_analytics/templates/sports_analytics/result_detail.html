@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result Details</title>
     <link rel="stylesheet" href="{% static 'css/b.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -65,26 +68,26 @@
             </div>
         </div>
         <h3>Simulated Score Details</h3>
-        <div class="itr-header">
-            <div class="col col-pad-0">Runs</div>
+        <div class="itr-header row">
+            <div class="col col-pad-0 firstColumn">Runs</div>
             {% for i in len %}
             <div class="col itr">{{i}}</div>
             {% endfor%}
         </div>
-        <div class="team-1">
-            <div class="col col-pad-1">{{object.team1.team_name}}</div>
+        <div class="team-1 row">
+            <div class="col col-pad-1 firstColumn">{{object.team1.team_name}}</div>
             {% for i in result1%}
             <div class="col game">{{i}}</div>
             {% endfor%}
         </div>
-        <div class="team-2">
-            <div class="col col-pad-2">{{object.team2.team_name}}</div>
+        <div class="team-2 row">
+            <div class="col col-pad-2 firstColumn">{{object.team2.team_name}}</div>
             {% for i in result2%}
             <div class="col game">{{i}}</div>
             {% endfor%}
         </div>
-        <div class="win">
-            <div class="col col-pad-3">Win Loss</div>
+        <div class="win row">
+            <div class="col col-pad-3 firstColumn">Win Loss</div>
             {% for a,i in win_loss %}
             {% if i == "T1" %}
             <div class="col t1">{{a}}</div>
