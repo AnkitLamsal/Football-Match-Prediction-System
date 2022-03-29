@@ -57,6 +57,13 @@ a{
     box-shadow:  5px 5px 15px #bebebe, -5px -5px 15px #e0e0e0;
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 5px;
 }
 
 @media (max-width: 1100px) {
