@@ -2,13 +2,15 @@ import matplotlib
 import matplotlib.pyplot as plt
 import base64, io, urllib
 
-def get_plot(x,y):
+def get_plot(x,y,team1_name, team2_name):
     matplotlib.use('Agg')
     plt.clf()
-    plt.scatter(x,y)
+    plt.plot(x,color='#9acd32')
+    plt.plot(y,color='#40e0d0')
+    plt.legend([f"{team1_name}",f"{team2_name}"])
     # plt.figure(figsize=(10,10))
-    plt.xlabel("Goals by team1")
-    plt.ylabel("Goals By team2")
+    plt.xlabel("Itreation")
+    plt.ylabel("Number of Goals")
     fig = plt.gcf()
     but = io.BytesIO()
     fig.savefig(but, format = 'png')

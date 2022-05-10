@@ -1,0 +1,56 @@
+.col-md{
+    margin-right: 1rem;
+}
+.show-form{
+    background-image: url('../img/football_ground.jpg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 89.5vh;
+}
+.flex{
+    display:flex;
+    flex:1;
+}
+.pad{
+    padding: 2rem;
+}
+.form-class{
+    border-radius: 2rem;
+    background-color: white;
+    padding:3.5rem;
+    width:45%;
+    /* height:80%; */
+    /* border: 2px solid black; */
+    margin:0 auto;
+}
+.versus{
+    margin-right: 1.5rem;
+    margin-top: 1.12rem;
+    text-align: center;
+    padding-right: 1rem;
+}
+.center-submit{
+    display: block;
+    background-color: black;
+    color:white;
+    padding:1rem;
+    border: none;
+    border-radius:1.8rem;
+    /* margin:auto; */
+    margin:0 auto;
+}
+.nr_center{
+    display: block;
+    margin:1.5rem auto 1.5rem auto;
+    width:80%;
+}
+a:hover{
+    color: white;
+    text-decoration: none;    
+}
+.page-head{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+}

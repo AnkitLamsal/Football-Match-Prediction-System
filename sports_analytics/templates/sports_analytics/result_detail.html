@@ -20,10 +20,16 @@
                 <a class="navLink" href="{% url 'sports_analytics:home'%}">Home</a>
             </li>
             <li class="links links-1">
-                <a class="navLink" href="#">Dashboard</a>
+                <a class="navLink" href="{% url 'sports_analytics:viewTeam'%}">Teams</a>
             </li>
             <li class="links links-1">
                 <a class="navLink" href="{% url 'sports_analytics:createTeam'%}">Create New Team</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:simulate'%}">Select Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:result'%}">View Results</a>
             </li>
         </ul>
     </header>
@@ -76,13 +82,13 @@
                 {% endfor%}
             </div>
             <div class="team-1 row">
-                <div class="col col-pad-1 firstColumn"><div class="table-2-title">{{object.team1.team_name}}</div></div>
+                <div class="col col-pad-1 firstColumn t1"><div class="table-2-title">{{object.team1.team_name}}</div></div>
                 {% for i in result1%}
                 <div class="col game">{{i}}</div>
                 {% endfor%}
             </div>
             <div class="team-2 row">
-                <div class="col col-pad-2 firstColumn"><div class="table-2-title">{{object.team2.team_name}}</div></div>
+                <div class="col col-pad-2 firstColumn t2"><div class="table-2-title">{{object.team2.team_name}}</div></div>
                 {% for i in result2%}
                 <div class="col game">{{i}}</div>
                 {% endfor%}
@@ -104,7 +110,7 @@
         </div>
         <br>
         <div class="graph">
-            <div class="graphTitle">Goal Score Scatter Plot</div>
+            <div class="graphTitle">Goal Score Line Chart</div>
             {% if graph %}
             <img class="graphImage" src="data:image/png;base64,{{ graph }}" alt="Graph" height="500" width="500">
             {% endif %}

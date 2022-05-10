@@ -1,0 +1,34 @@
+.table-row{
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2,1rem);
+    /* gap:2rem; */
+    border-bottom: 1px solid #E3F1D5;
+    /* background-color: blueviolet; */
+    justify-items: center;
+}
+.head{
+    gap:5rem;
+}
+.body{
+    gap:5rem;
+}
+.action{
+    display: flex;
+    flex-direction: column;
+}
+.simulate_{
+    background-color: limegreen;
+    color:white;
+}
+.delete{
+    background-color: red;
+    color:white;
+}
+.round{
+    border-radius: 2px;
+    margin-right: 1rem;
+    margin-bottom: 1px;
+    margin-top:1px;
+    padding: 0.30rem;
+}

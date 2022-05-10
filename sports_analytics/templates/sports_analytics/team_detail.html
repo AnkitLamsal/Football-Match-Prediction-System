@@ -1,28 +1,69 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DetailView</title>
 </head>
+
 <body>
-    <div class="details">
-        <h3>View Teams</h3>
-        <table>
-            <tr>
-                <th>Team</th>
-                <th>Posession</th>
-                <th>Hits</th>
-            </tr>
-            {% for team in object_list %}
-            <tr>
-                <td>{{team.team_name}}</td>
-                <td>{{team.team_posession}}</td>
-                <td>{{team.team_hit}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
+    <header>
+        <ul class="a_links">
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:home'%}">Home</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:viewTeam'%}">Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:createTeam'%}">Create New Team</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:simulate'%}">Select Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:result'%}">View Results</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="details">
+
+            <h3 class="page-title-1">Teams</h3>
+        </div>
+        <div class="table-container">
+            <div class="table-container-head">
+                <div class="table-row head">
+                    <div class="col">S.N.</div>
+                    <div class="col">Team Name</div>
+                    <div class="col">Posession</div>
+                    <div class="col">Hits</div>
+                    <div class="col">Action</div>
+                </div>
+            </div>
+            <div class="flex-body">
+                {% for team in object_list %}
+                <div class="table-row body">
+                    <div class="col">{{forloop.counter}}</div>
+                    <div class="col">{{team.team_name}}</div>
+                    <div class="col">{{team.team_posession}}</div>
+                    <div class="col">{{team.team_hit}}</div>
+                    <div class="col flex">
+                        <a href="{% url 'sports_analytics:update_team' team.id %}" class="update">Update</a>
+                        <!-- <a href="#" class="delete">Delete</a> -->
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

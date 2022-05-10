@@ -20,13 +20,11 @@ body {
     flex:1;
     display: inline;
     color: white;
-
 }
 
 a{
     text-decoration: none;
     color:black;
-
     font-size: 1.2rem;
 }
 
@@ -49,7 +47,7 @@ a{
 
 .actions {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     justify-content: space-around;
 }
 
@@ -135,19 +133,19 @@ a{
     border:0.25px solid #ccc;
 }
 .t1{
-    background-color: yellowgreen;
+    background-color: #9acd32;
     color:black;
     border: 0.25px solid #ccc;
 
 }
 .t2{
-    background-color: turquoise;
+    background-color: #40e0d0;
     color:black;
     border: 0.25px solid #ccc;
 
 }
 .dr{
-    background-color: blueviolet;
+    background-color: #8a2be2;
     color:white;
     border:0.25px solid #ccc;
 }

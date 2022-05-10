@@ -1,0 +1,13 @@
+.show-form{
+    background-image: url('../img/post.jpg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.pad{
+    padding: 1.25rem;
+}
+.form-class{
+    padding:1.75rem;
+}

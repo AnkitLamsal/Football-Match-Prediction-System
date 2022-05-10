@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" href="{% static 'css/result_list.css'%}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetailView</title>
+</head>
+
+<body>
+    <header>
+        <ul class="a_links">
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:home'%}">Home</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:viewTeam'%}">Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:createTeam'%}">Create New Team</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:simulate'%}">Select Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:result'%}">View Results</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="details">
+
+            <h3 class="page-title-1">Results</h3>
+        </div>
+        <div class="table-container">
+            <div class="table-container-head">
+                <div class="table-row head">
+                    <div class="col">S.N.</div>
+                    <div class="col">First Team</div>
+                    <div class="col">Second Team</div>
+                    <div class="col">Number of Runs</div>
+                    <div class="col">Mean Score First Team</div>
+                    <div class="col">Standard deviation First Team</div>
+                    <div class="col">Mean Score Second Team</div>
+                    <div class="col">Standard deviation Second Team</div>
+                    <div class="col ">Actions</div>
+                </div>
+            </div>
+            <div class="flex-body">
+                {% for object in object_list %}
+                <div class="table-row body">
+                    <div class="col">{{forloop.counter}}</div>
+                    <div class="col">{{object.team1}}</div>
+                    <div class="col">{{object.team2}}</div>
+                    <div class="col">{{object.number_runs}}</div>
+                    <div class="col">{{object.avg_goal_1}}</div>
+                    <div class="col">{{object.std_goal_1}}</div>
+                    <div class="col">{{object.avg_goal_2}}</div>
+                    <div class="col">{{object.std_goal_2}}</div>
+                    <div class="col">
+                        <div class="action">
+                            <a href="{% url 'sports_analytics:result_detail' object.id %}" class="simulate_ round">Simulate Again!</a>
+                            <a href="{% url 'sports_analytics:delete-result' object.id%}" class="delete round">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

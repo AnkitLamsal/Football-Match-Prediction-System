@@ -1,0 +1,8 @@
+
+<form method="post">{% csrf_token %}
+     
+ 
+ 
+    <p>Are you sure you want to delete {{ object.team1}} vs {{object.team2}} with {{object.number_runs}} runs Match?</p>
+        <input type="submit" value="Confirm">
+    </form>

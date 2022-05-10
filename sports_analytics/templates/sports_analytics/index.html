@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <ul class="a_links">
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:home'%}">Home</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:viewTeam'%}">Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:createTeam'%}">Create New Team</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:simulate'%}">Select Teams</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'sports_analytics:result'%}">View Results</a>
+            </li>
+            <li class="links links-1">
+                <a class="navLink" href="{% url 'admin:index'%}">Admin</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="background"></div>
+        <div class="text">
+            <h2 class="page-title">Football match Simulator Studio</h2>
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, nisi? Perspiciatis
+                accusantium autem
+                numquam nostrum deserunt, in magnam atque qui enim nobis doloribus commodi? Illum reiciendis
+                pariatur mollitia, consequatur, molestias sed, placeat dolorem soluta dolorum rem aliquam animi
+                doloribus sunt quos voluptatem dolores culpa excepturi deserunt odio repellat necessitatibus unde!
+            </p>
+            <a href="{% url 'sports_analytics:home'%}" class="simulate_match">Simulate Matches</a>
+        </div>
+    </main>
+</body>
+
+</html>

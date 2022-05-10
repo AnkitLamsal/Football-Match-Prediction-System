@@ -1,0 +1,118 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* max-width: 1500px; */
+}
+
+* {
+    box-sizing: border-box;
+}
+.a_links{
+    list-style-type: none;
+    flex-wrap: wrap;
+    background-color:black;
+    margin: 0;
+}
+.a_links>.links{
+    flex:1;
+    display: inline;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.2rem;
+}
+
+.navLink {
+    font-size: 1.6rem;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0 10px;
+    color: white;
+}
+.background{
+    /* margin:0 auto; */
+    position: relative;
+    background-image: url(../img/ground.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(4px);
+    height:89.5vh;
+}
+.text{
+    position: absolute;
+    top:20%;
+}
+
+.page-title{
+    margin: 0 !important;
+    /* margin: 50px 0; */
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    padding: 0 20px;
+    color:white;
+}
+.page-title-1{
+    margin: 0;
+    margin-top: 2rem;
+    /* margin: 50px 0; */
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+    padding: 0 20px;
+    color:black;
+}
+.paragraph{
+    margin:3rem;
+    color:black;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 2rem;
+}
+.simulate_match{
+    width:17%;
+    display: block;
+    padding:1rem;
+    /* align-items: center; */
+    margin:0 auto;
+    margin-top:3rem;
+    background-color: black;
+    color:white;
+    border-radius: 5rem;
+}
+.simulate_match:hover{
+    /* opacity: 0.6; */
+    background: rgba(0,0,0,0);
+    border:2px solid black;
+    color:black;
+    font-weight: 700;
+}
+
+/* Dashboard codes */
+.table-container{
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 80rem;
+}
+.table-row{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2,1rem);
+    gap:1rem;
+    border-bottom: 1px solid #E3F1D5;
+    /* background-color: blueviolet; */
+    justify-items: center;
+}
+.col{
+    padding-top: 1rem;
+}
+.head{
+    background-color:rgb(64,224,208);
+}

@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, ListView, DetailView, UpdateView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from .models import Result, Team
 from .forms import ResultForm, TeamForm
 from .simulate_games import simulate, GameTeam
 from .utils import get_plot
 # Create your views here.
 def home(request):
-    return HttpResponse("<h1>Hello World</h1>")
+    return render(request,"sports_analytics/index.html")
 
 class TeamCreate(CreateView):
-    success_url=reverse_lazy('sports_analytics:home')
+    success_url=reverse_lazy('sports_analytics:viewTeam')
     model = Team
-    template_name = "create_team.html"
+    template_name = "sports_analytics/create_team.html"
     form_class = TeamForm
 
 class TeamView(ListView):
@@ -22,10 +22,14 @@ class TeamView(ListView):
 
 class ResultCreate(CreateView):
     model = Result
-    template_name = "create_team.html"
+    template_name = "sports_analytics/match_selection.html"
     form_class = ResultForm
 
+    # def post(self,request,*args,**kwargs):
+    #     # print(self.object.team1, self.object.team2)
+
     def get_success_url(self):
+        # print(self.object.team1)
         id = self.object.id
         return reverse_lazy('sports_analytics:result_detail', kwargs={'pk': id})
 
@@ -43,13 +47,14 @@ class ResultDetailView(DetailView):
         context['object'].team2.team_name)        
         (result, mean, std) = simulate(nrOfRuns=context['object'].number_runs, team1=team1, team2=team2)
         # print(result[:,0])
-        graph = get_plot(result[:,0],result[:,1])
+        graph = get_plot(result[:,0],result[:,1], context['object'].team1.team_name, context['object'].team2.team_name)
         # print(result.shape[0])
         context['len'] = list(range(1,result.shape[0]+1))
         context['result1'] = result[:,0]
         context['result2'] = result[:,1]
         context['mean'] = mean
-        context['std'] = std 
+        std = [round(std[0],3),round(std[1],3)]
+        context['std'] = std     
         context['graph']= graph
         context['win_loss'] = check_win_loss(result[:,0], result[:,1],context['object'].team1.team_name, context['object'].team2.team_name)
         obj = context['object']
@@ -92,6 +97,16 @@ def save_query(obj,mean,std):
 
 class TeamUpdate(UpdateView):
     model = Team
-    success_url=reverse_lazy('sports_analytics:home')
+    success_url=reverse_lazy('sports_analytics:viewTeam')
     form_class = TeamForm
-    template_name = "create_team.html"
+    template_name = "sports_analytics/create_team.html"
+
+
+class ResultView(ListView):
+    model = Result
+    template_name = "sports_analytics/result_list.html"
+
+class ResultDeleteView(DeleteView):
+    model = Result
+    success_url = reverse_lazy('sports_analytics:result')
+    
